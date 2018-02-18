@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { LoadingService } from '../../../shared/services/loading.service';
-import { CommonService } from '../../services/common.service';
 import { PieGridChart, PieChart } from '../../model/chart-configuration.model';
 
 @Component({
@@ -13,8 +12,7 @@ export class ChartsComponent implements OnInit {
   pieChart: PieChart = new PieChart();
   constructor(
     private loadingService: LoadingService,
-    private router: Router,
-    private commonService: CommonService
+    private router: Router
   ) {}
 
   ngOnInit() {

@@ -4,10 +4,10 @@
             <a class="navbar-brand" href="#">
                 <i class="material-icons">account_circle</i> Mohammad Irfan</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      <span class="navbar-toggler-icon"></span>
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -16,12 +16,11 @@
                         <i class="material-icons">apps</i> Components
                     </a>
                     <div class="dropdown-menu dropdown-with-icons">
-                        <a [routerLink]="['/dashboard']" class="dropdown-item">
-                            <i class="material-icons">layers</i> All Components
-                        </a>
-                        <a [routerLink]="['/charts']" class="dropdown-item">
-                            <i class="material-icons">show_chart</i> ngx-charts
-                        </a>
+                        <ng-container *ngFor="let metadata of menuMetadata; let i=index">
+                            <a routerLink="{{metadata.route}}" class="dropdown-item" *ngIf="metadata.show">
+                                <i class="material-icons">{{metadata.icon}}</i> {{metadata.title}}
+                            </a>
+                        </ng-container>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -52,23 +51,23 @@
             <ul>
                 <li>
                     <a href="javascript:void(0)">
-          Mohammad Irfan
-        </a>
+            Mohammad Irfan
+          </a>
                 </li>
                 <li>
                     <a href="javascript:void(0)">
-          About Us
-        </a>
+            About Us
+          </a>
                 </li>
                 <li>
                     <a href="javascript:void(0)">
-          Blog
-        </a>
+            Blog
+          </a>
                 </li>
                 <li>
                     <a href="javascript:void(0)">
-          Licenses
-        </a>
+            Licenses
+          </a>
                 </li>
             </ul>
         </nav>

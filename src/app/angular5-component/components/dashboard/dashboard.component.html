@@ -17,18 +17,23 @@
     <div class="section section-signup page-header" style="background-image: url('assets/img/city.jpg');">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card card-signup">
-                        <form class="form" method="" action="">
-                            <div class="card-header card-header-primary text-center">
-                                <h4><i class="material-icons">show_chart</i> Charts</h4>
-                            </div>
-                            <div class="card-footer justify-content-center">
-                                <a [routerLink]="['/charts']" class="btn btn-link btn-primary btn-lg">Get Started</a>
-                            </div>
-                        </form>
+                <ng-container *ngFor="let metadata of dashboardMetadata; let i=index">
+                    <div class="col-md-4" *ngIf="metadata.show">
+                        <div class="card card-signup">
+                            <form class="form">
+                                <div>
+                                    <div class="card-header card-header-primary text-center">
+                                        <h4>
+                                            <i class="material-icons">{{metadata.icon}}</i> {{metadata.title}}</h4>
+                                    </div>
+                                    <div class="card-footer justify-content-center">
+                                        <a routerLink="{{metadata.route}}" class="btn btn-link btn-primary btn-lg">Get Started</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                </ng-container>
             </div>
         </div>
     </div>
@@ -39,14 +44,14 @@
                     <h3>Thank you for supporting us!</h3>
                 </div>
                 <button id="twitter" class="btn btn-raised btn-twitter sharrre">
-        <i class="fa fa-twitter"></i> Tweet
-      </button>
+          <i class="fa fa-twitter"></i> Tweet
+        </button>
                 <button id="facebook" class="btn btn-raised btn-facebook sharrre">
-        <i class="fa fa-facebook-square"></i> Share
-      </button>
+          <i class="fa fa-facebook-square"></i> Share
+        </button>
                 <button id="googlePlus" class="btn btn-raised btn-google-plus sharrre">
-        <i class="fa fa-google-plus"></i> Share
-      </button>
+          <i class="fa fa-google-plus"></i> Share
+        </button>
                 <a id="github" href="javascript:void(0)" target="_blank" class="btn btn-raised btn-github">
                     <i class="fa fa-github"></i> Star
                 </a>
