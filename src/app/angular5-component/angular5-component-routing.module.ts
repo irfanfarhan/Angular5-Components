@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ChartsComponent } from './components/charts/charts.component';
 
 const angular5ComponentRoutes: Routes = [
   {
@@ -11,6 +12,16 @@ const angular5ComponentRoutes: Routes = [
       {
         path: '',
         component: DashboardComponent
+      }
+    ]
+  },
+  {
+    path: 'charts',
+    component: NavigationComponent,
+    children: [
+      {
+        path: '',
+        component: ChartsComponent
       }
     ]
   }

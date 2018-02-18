@@ -7,12 +7,14 @@ import { Angular5ComponentRoutingModule } from './angular5-component-routing.mod
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CommonService } from './services/common.service';
+import { ChartsComponent } from './components/charts/charts.component';
 
 @NgModule({
   imports: [CommonModule, SharedModule, LibraryModule, Angular5ComponentRoutingModule],
   declarations: [
     NavigationComponent,
-    DashboardComponent
+    DashboardComponent,
+    ChartsComponent
   ],
   entryComponents: [],
   providers: [LoadingService, CommonService]

@@ -18,7 +18,7 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.showMenu = this.commonService.showMenu;
-    if (this.router.url != this.commonService.landingPageLink) {
+    if (this.router.url !== this.commonService.landingPageLink) {
       this.commonService.showMenu = true;
       this.showMenu = this.commonService.showMenu;
     }
