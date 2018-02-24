@@ -23,39 +23,89 @@
                 <br>
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="#pie" role="tab" data-toggle="tab">
-                                            <i class="material-icons">pie_chart</i> Pie Chart
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#adv-pie" role="tab" data-toggle="tab">
-                                            <i class="material-icons">schedule</i> Advanced Pie Chart
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#grid-pie" role="tab" data-toggle="tab">
-                                            <i class=" fa fa-pie-chart"></i> Pie Grid Chart
-                                        </a>
-                                    </li>
-                                </ul>
+                        <ul class="nav nav-pills nav-pills-icons" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#piecharts" role="tab" data-toggle="tab">
+                                    <i class="material-icons">pie_chart</i> Pie Charts
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#barcharts" role="tab" data-toggle="tab">
+                                    <i class="fa fa-bar-chart" aria-hidden="true"></i> Bar Charts
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content tab-space">
+                            <div class="tab-pane active" id="piecharts">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="#pie" role="tab" data-toggle="tab">
+                                                    <i class="material-icons">pie_chart</i> Pie Chart
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#adv-pie" role="tab" data-toggle="tab">
+                                                    <i class="material-icons">schedule</i> Advanced Pie Chart
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#grid-pie" role="tab" data-toggle="tab">
+                                                    <i class=" fa fa-pie-chart"></i> Pie Grid Chart
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="pie">
+                                                <ngx-charts-pie-chart [view]="pieChart.view" [scheme]="pieChart.colorScheme" [results]="pieChart.results" [legend]="pieChart.showLegend" [explodeSlices]="pieChart.explodeSlices" [labels]="pieChart.showLabels" [doughnut]="pieChart.doughnut" (select)="onSelect($event)">
+                                                </ngx-charts-pie-chart>
+                                            </div>
+                                            <div class="tab-pane" id="adv-pie">
+                                                <ngx-charts-advanced-pie-chart [view]="pieChart.view" [scheme]="pieChart.colorScheme" [results]="pieChart.results" (select)="onSelect($event)" [animations]="true">
+                                                </ngx-charts-advanced-pie-chart>
+                                            </div>
+                                            <div class="tab-pane" id="grid-pie">
+                                                <ngx-charts-pie-grid [view]="pieChart.view" [scheme]="pieChart.colorScheme" [results]="pieChart.results" (select)="onSelect($event)" [animations]="true">
+                                                </ngx-charts-pie-grid>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-8">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="pie">
-                                        <ngx-charts-pie-chart [view]="pieChart.view" [scheme]="pieChart.colorScheme" [results]="pieChart.results" [legend]="pieChart.showLegend" [explodeSlices]="pieChart.explodeSlices" [labels]="pieChart.showLabels" [doughnut]="pieChart.doughnut" (select)="onSelect($event)">
-                                        </ngx-charts-pie-chart>
+                            <div class="tab-pane" id="barcharts">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <ul class="nav nav-pills nav-pills-icons flex-column" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="#horizontalbarchart" role="tab" data-toggle="tab">
+                                                    <i class="fa fa-bar-chart" aria-hidden="true"></i> Horizontal Bar Chart
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#verticalbarchart" role="tab" data-toggle="tab">
+                                                    <i class="fa fa-bar-chart" aria-hidden="true"></i> Vertical Bar Chart
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="tab-pane" id="adv-pie">
-                                        <ngx-charts-advanced-pie-chart [view]="pieChart.view" [scheme]="pieChart.colorScheme" [results]="pieChart.results" (select)="onSelect($event)" [animations]="true">
-                                        </ngx-charts-advanced-pie-chart>
-                                    </div>
-                                    <div class="tab-pane" id="grid-pie">
-                                        <ngx-charts-pie-grid [view]="pieChart.view" [scheme]="pieChart.colorScheme" [results]="pieChart.results" (select)="onSelect($event)" [animations]="true">
-                                        </ngx-charts-pie-grid>
+                                    <div class="col-md-8">
+                                        <div class="tab-content">
+                                            <div class="tab-pane active" id="horizontalbarchart">
+                                                <ngx-charts-bar-horizontal [view]="horizontalBarChart.view" [scheme]="horizontalBarChart.colorScheme" [results]="horizontalBarChart.results" [gradient]="horizontalBarChart.gradient" [xAxis]="horizontalBarChart.showXAxis" [yAxis]="horizontalBarChart.showYAxis"
+                                                    [legend]="horizontalBarChart.showLegend" [showXAxisLabel]="horizontalBarChart.showXAxisLabel" [showYAxisLabel]="horizontalBarChart.showYAxisLabel" [xAxisLabel]="horizontalBarChart.xAxisLabel" [yAxisLabel]="horizontalBarChart.yAxisLabel"
+                                                    (select)="onSelect($event)">
+                                                </ngx-charts-bar-horizontal>
+                                            </div>
+                                            <div class="tab-pane" id="verticalbarchart">
+                                                <ngx-charts-bar-vertical [view]="horizontalBarChart.view" [scheme]="horizontalBarChart.colorScheme" [results]="horizontalBarChart.results" [gradient]="horizontalBarChart.gradient" [xAxis]="horizontalBarChart.showXAxis" [yAxis]="horizontalBarChart.showYAxis"
+                                                    [legend]="horizontalBarChart.showLegend" [showXAxisLabel]="horizontalBarChart.showXAxisLabel" [showYAxisLabel]="horizontalBarChart.showYAxisLabel" [xAxisLabel]="horizontalBarChart.xAxisLabel" [yAxisLabel]="horizontalBarChart.yAxisLabel"
+                                                    (select)="onSelect($event)">
+                                                </ngx-charts-bar-vertical>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -65,4 +115,3 @@
             </div>
         </div>
     </div>
-</div>
