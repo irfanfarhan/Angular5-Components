@@ -34,16 +34,28 @@ export class ChartsComponent implements OnInit {
     ];
     this.horizontalBarChart.results = [
       {
-        name: 'Germany',
-        value: 8940000
+        "name": "India",
+        "value": 40632
       },
       {
-        name: 'USA',
-        value: 5000000
+        "name": "United States",
+        "value": 49737
       },
       {
-        name: 'France',
-        value: 7200000
+        "name": "France",
+        "value": 36745
+      },
+      {
+        "name": "United Kingdom",
+        "value": 36240
+      },
+      {
+        "name": "Spain",
+        "value": 33000
+      },
+      {
+        "name": "Italy",
+        "value": 35800
       }
     ];
   }
