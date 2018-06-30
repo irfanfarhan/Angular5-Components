@@ -8,10 +8,10 @@ export const DashboardMetadata = [
   },
   {
     id: 1,
-    title: 'Personal Loan',
-    icon: 'show_chart',
-    route: '/charts',
+    title: 'Angular Google Maps',
+    icon: 'place',
+    route: '/google-maps',
     subCaption: '',
-    show: false
+    show: true
   }
 ];

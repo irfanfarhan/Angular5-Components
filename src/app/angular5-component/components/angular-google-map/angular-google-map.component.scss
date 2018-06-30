@@ -1,0 +1,19 @@
+.page-header {
+    background-image: url('/assets/img/examples/card-project5.jpg');
+}
+agm-map {
+        height: 300px;
+    }
+    .glyphicon-map-marker {
+                    position: absolute;
+                    padding: 10px;
+                    pointer-events: none;
+                    color: red;
+                    top: 25px;
+    left: 6px;
+                }
+                .google-search-map {
+                    padding-right: 25px;
+                    padding-left: 30px;
+                    margin-bottom: 10px
+                }

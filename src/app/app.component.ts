@@ -1,7 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { DOCUMENT } from '@angular/platform-browser';
-import { URLSearchParams } from '@angular/http';
+import { Router } from '@angular/router';
 import { LoadingService } from './shared/services/loading.service';
 
 @Component({
@@ -11,7 +9,6 @@ import { LoadingService } from './shared/services/loading.service';
 })
 export class AppComponent implements OnInit {
   constructor(
-    @Inject(DOCUMENT) private document: any,
     private router: Router,
     private loadingService: LoadingService
   ) {}

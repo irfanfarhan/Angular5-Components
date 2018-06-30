@@ -8,7 +8,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts/release';
 import { LoadingService } from './services/loading.service';
 import { LoginRedirectComponent } from './components/login-redirect/login-redirect.component';
 import { LoaderComponent } from './components/loader/loader.component';
-
+import { AgmCoreModule } from '@agm/core';
+import { environment } from './../../environments/environment';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +18,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    NgxChartsModule
+    NgxChartsModule,
+    AgmCoreModule.forRoot(environment.googleMapApi),
   ],
   declarations: [LoginRedirectComponent, LoaderComponent],
   exports: [
@@ -29,7 +31,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     RouterModule,
     LoginRedirectComponent,
     NgxChartsModule,
-    LoaderComponent
+    LoaderComponent,
+    AgmCoreModule
   ],
   providers: [LoadingService]
 })

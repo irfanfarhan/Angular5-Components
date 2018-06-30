@@ -13,5 +13,13 @@ export const MenuMetadata = [
     route: '/charts',
     subCaption: '',
     show: true
+  },
+  {
+    id: 2,
+    title: 'Angular Google Maps',
+    icon: 'place',
+    route: '/google-maps',
+    subCaption: '',
+    show: true
   }
 ];

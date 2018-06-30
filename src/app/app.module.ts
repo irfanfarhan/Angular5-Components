@@ -6,7 +6,6 @@ import { Angular5ComponentModule } from './angular5-component/angular5-component
 import { SharedModule } from './shared/shared.module';
 import { LibraryModule } from './lib/lib.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { UrlSerializer } from '@angular/router';
 import { AppComponent } from './app.component';
 
 @NgModule({

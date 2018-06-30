@@ -1,0 +1,33 @@
+<div class="page-header header-filter" data-parallax="true">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title">Angular Google Maps</h1>
+                <h4>Angular 2 + Google Maps Places Autocomplete</h4>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main main-raised">
+    <div class="section section-white" [ngStyle]="{'min-height': '600px'}">
+        <div class="container">
+            <div id="navigation-pills">
+                <br>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 padding-left-none field-row">
+                            <label>Address</label>
+                            <i class="material-icons glyphicon-map-marker">place</i>
+                            <input placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control google-search-map" (keyup)=checkIsEmpty($event) #search [formControl]="searchControl" size="100">
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-none field-row" *ngIf="formatted_address">
+                            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+                                <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+                            </agm-map>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

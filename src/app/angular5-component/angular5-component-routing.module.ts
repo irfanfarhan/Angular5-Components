@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ChartsComponent } from './components/charts/charts.component';
-
+import { AngularGoogleMapComponent } from './components/angular-google-map/angular-google-map.component';
 const angular5ComponentRoutes: Routes = [
   {
     path: 'dashboard',
@@ -22,6 +22,16 @@ const angular5ComponentRoutes: Routes = [
       {
         path: '',
         component: ChartsComponent
+      }
+    ]
+  },
+  {
+    path: 'google-maps',
+    component: NavigationComponent,
+    children: [
+      {
+        path: '',
+        component: AngularGoogleMapComponent
       }
     ]
   }

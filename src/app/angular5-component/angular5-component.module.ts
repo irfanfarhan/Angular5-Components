@@ -8,13 +8,14 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CommonService } from './services/common.service';
 import { ChartsComponent } from './components/charts/charts.component';
-
+import { AngularGoogleMapComponent } from './components/angular-google-map/angular-google-map.component';
 @NgModule({
   imports: [CommonModule, SharedModule, LibraryModule, Angular5ComponentRoutingModule],
   declarations: [
     NavigationComponent,
     DashboardComponent,
-    ChartsComponent
+    ChartsComponent,
+    AngularGoogleMapComponent
   ],
   entryComponents: [],
   providers: [LoadingService, CommonService]
